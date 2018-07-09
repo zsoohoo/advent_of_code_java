@@ -21,12 +21,16 @@ public class AdventOfCode {
      */
     public static void main(String[] args) {
         try{
-            executeProblem1("resources/P1Input.txt");
-            executeProblem2("resources/P2Input.txt");
-            executeProblem3("resources/P3Input.txt");
-            executeProblem4("resources/P4Input.txt");
-            executeProblem5("resources/P5Input.txt");
-            executeProblem6("resources/P6Input.txt");
+//            executeProblem1("resources/P1Input.txt");
+//            executeProblem2("resources/P2Input.txt");
+//            executeProblem3("resources/P3Input.txt");
+//            executeProblem4("resources/P4Input.txt");
+//            executeProblem5("resources/P5Input.txt");
+//            executeProblem6("resources/P6Input.txt");
+//            executeProblem7("resources/P7Input.txt");
+//            executeProblem8("resources/P8Input.txt");
+//            executeProblem9("resources/P9Input.txt");
+            executeProblem10("resources/P10Input.txt");
         }
         catch(FileNotFoundException e){
             System.out.println("File not Found");
@@ -97,7 +101,41 @@ public class AdventOfCode {
         System.out.println("Loop size for P6 Part 2 is: " + p6.getCyclesToRepeat());
     }
         
-//        static void executeProblem6(String fileName) throws IOException{
+        static void executeProblem7(String fileName) throws IOException{
+        FileReader f = new FileReader(fileName);
+        BufferedReader b = new BufferedReader(f);
+        Problem7 p7 = new Problem7(b);
+        System.out.println("Tree root for P7 Part 1 is: " + p7.getRoot());
+        System.out.println("Correct weight for P7 Part 2 is: " + p7.getCorrectWeight());
+    }
+        
+        static void executeProblem8(String fileName) throws IOException{
+        FileReader f = new FileReader(fileName);
+        BufferedReader b = new BufferedReader(f);
+        Problem8 p8 = new Problem8(b);
+        System.out.println("Highest register value at end for P8 Part 1 is: " + p8.getLargestRegister());
+        System.out.println("Highest register value ever for P8 Part 2 is: " + p8.getHighestEver());
+    }
+        
+        static void executeProblem9(String fileName) throws IOException{
+        FileReader f = new FileReader(fileName);
+        BufferedReader b = new BufferedReader(f);
+        Problem9 p9 = new Problem9(b);
+        System.out.println("Total score for P9 Part 1 is: " + p9.getTotal());
+        System.out.println("Non-canceled characters within garbage for P9 Part 2 is: " + p9.getTrashCount());
+    }
+        
+        static void executeProblem10(String fileName) throws IOException{
+        FileReader f = new FileReader(fileName);
+        BufferedReader b = new BufferedReader(f);
+        Problem10 p10 = new Problem10(b);
+        p10.processLengths(Boolean.FALSE);
+        System.out.println("Product of first two values for P10 Part 1 is: " + p10.productOfElements(0, 1) );
+        p10.resetValueList();
+        p10.processLengths(Boolean.TRUE);
+        System.out.println("Hash for P10 Part 2 is: " + p10.findDenseHashHex());
+    }
+//        static void executeProblem//(String fileName) throws IOException{
 //        FileReader f = new FileReader(fileName);
 //        BufferedReader b = new BufferedReader(f);
 //        Problem// p// = new Problem//(b);
